@@ -1,0 +1,23 @@
+2.1
+   a. Both search algorithms solve the problem correctly.
+   b. The Hill-climbing solution is faster for this problem.
+   c. The starting value for x will affect how long it takes to find a solution, but it does not affect either algorithm correctly finding the solution.
+   d. With delta values larger than 1, both algorithms sometimes find incorrect solutions. This is because the algorithms compare the current function value with those of x's a certain distance (delta) away. With larger deltas, sometimes the system never evaluates the function at 15 and sees the maximum. In this case, it will see another nearby solution as the function's high point. For delta values less than 1, in some cases an initial x value that is far away from the maximum will cause the simulated annealing algorithm to max out its computation time before finding the correct solution, thus suggesting an incorrect maximum.
+   e. exp_schedule is the scheduling function for simulated annealing. This parallels the controlled cooling in metallurgy by giving a starting "temperature" and a rate that will go into the function that evaluates how much time is left to find a solution. Essentially, this gives the timing function so that simulated annealing only searches for a solution for a set amount of time. It also factors in to how often simulated annealing will take a next step that has a worse evaluation rather than a better one. 
+
+2.2
+   a. The algorithms do not find the correct solution in this problem space because they search to find the high point of the hill that they are already on. Thus if they do not start on the furthest right hill, they find a different local optimum.
+   b. If the starting x value places the algorithm on searching the hill around 30, they will find the correct maximum for this window.
+   c. Modifying the step size affects the operation significantly. If the step size is larger, the algorithm may skip over to different hills, often leading it to find bizzare solutions that may not even be local optimums. A small step size will guarantee that the algorithms at least find local maximums. For example, I found the algorithms consistently found the local maximums given delta=0.001.
+   d. The minimum and maximum values here should be 0 and 30. The algorithms scored differently depending on the initial value.
+
+2.3
+   a. These algorithms now successfully find the maximum value. It is likely because I added enough random restarts that each algorithm had a decent chance of eventually hitting on a point in the highest hill.
+   b. Hill-climbing: 14.0 average value
+      Simulated annealing: 18.15
+   c. My current hill-climbing algorithm does better because it will only climb the hill that it is on, so it finds the maximum value assuming it hits the highest possible hill. My current simulated annealing algorithm also sometimes searches beyond the maximum for some reason that I cannot ascertain.
+
+2.4
+   a. Beam search makes the most sense for simulated-annealing, because hill-climbing will always only choose the best possible option. With simulated-annealing, one could expand the most promising option and decide from there if it leads to a solution or if the algorithm should choose a worse next step for better future solutions.
+   b. The number of solutions I could maintain depend on what is considered reasonable, along with what I am setting the limit of my annealing to.
+   c. To implement beam search, I would need to save previous steps in the search in order to back track if possible. This is different from random restarts because I am not abandoning my current solution to find a potentially better one, but remember where I came from so I can backtrack and restart from my previous position if I don't happen to find the best possible solution.
