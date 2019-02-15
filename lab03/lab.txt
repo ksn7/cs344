@@ -1,0 +1,16 @@
+Kelsey Brouwer
+CS 344-A SP '19
+Lab 03
+
+3.1
+	a. When running only the easy problem, AC3 and backtracking both solved the problem, while depth first search and min_conflicts did not. However, backtracking took much longer than AC3. The two algorithms that did not solve the problem are because there is too big of a serach space. AC3 and backtracking both solved the puzzle because they can handle a bigger search space and they are fast algorithms, but AC3 was quickly because it did quick comparisons, while backtracking had to check several partial paths before finding the correct solution.
+	b. Without forward checking, the value ordering options don't make much of a difference (both are very slow). Both solve the problem quickly when adding forward checking. Conceptually, minimum-remaining-values with forward checking should work the best, since it would search down branches that have the fewest remaining options first. Finding a solution for that space will add more constraints on other spaces, thus reducing the search space and making the problem solve even faster.
+
+3.2 
+	a. AC3 appears to fail on all values of n (I tested n=1..4). Backtracking works up to around 30, but it gets extremely slow. Min-conflicts works much better, running quite quickly up for most values. It still solves n=5000, but takes at least 30 seconds to solve.
+	b. Changing the variable selection to mrv makes a significant difference, and adding forward_checking improves it even more. Using this combination, backtracking solved the problem fairly quickly up to n=500. 
+	c. Min-conflicts requires 52 steps to do its work.
+
+3.3 
+	a. In traditional problems, everything is represented as states, with a list of actions that can be done from the current state. A result is the next state should a specified action be taken, and you complete the problem by checking if the current state has met the goal. CSPs don't specifically have states, but a set of variables and their domains. The equivalent of a state then, would be the set of variables with their assigned values. Instead of a set of actions that can be taken from a state, there are a set of constraints that limit which items in the domain can be assigned to a variable. Results then work the same way. In this case, the equivalent of a goal test checking if the current state meets the goal checks if all variables are assigned and the assignments fit the constraints.
+	b. In traditional problem-solving, there aren't many available heuristics. A next step can be evaluated as better or worse based on an explicit function given by the developer. In constraint-based problem solving, heuristics can be evaluate how many conflicts a next choice raises or how many options the choice leaves open. From this, one can make sequential choices that makes the rest of the problem faster to solve. This is not an option for traditional search.
