@@ -12,7 +12,7 @@ from search import depth_first_graph_search
 import logging
 
 # 1. Set up the problem.
-n = 2000
+n = 500
 problem = NQueensCSP(n)
 
 # 2. Solve the problem.
