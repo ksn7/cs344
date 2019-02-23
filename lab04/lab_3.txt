@@ -1,0 +1,20 @@
+Kelsey Brouwer
+Lab04, CS 344 - SP '19
+
+4.3.a
+   i. Based on proviced information: P(user) = 0.089
+   ii. Test is 99% sensitive: P(test | user) = 0.99
+   iii. Test is 99% sensitive: P(-test | user) = 1 - P(test | user) = 0.01
+   iv. Test is 98% specific: P(test | -user) = 1 - P(-test | -user) = 0.02
+   v. P(user | test) = P(test | user) * P(user) / P(test)
+                     = 0.99 * 0.089 / [P(test | user) * P(user) + P(test | -user) * P(-user)]
+                     = 0.99 * 0.089 / (0.99 * 0.089 + 0.02 * 0.911)
+                     = 0.99 * 0.089 / 0.10633
+                     = 0.829
+
+4.3.b
+   P(cancer | +) = P(+ | cancer) * P(cancer) / P(+)
+                 = 0.8 * 0.01 / [P(+ | cancer) * P(cancer) + P(+ | -cancer) * P(-cancer)]
+                 = 0.8 * 0.01 / (0.8 * 0.01 + 0.096 * 0.99)
+                 = 0.8 * 0.01 / 0.10304
+                 = 0.078
