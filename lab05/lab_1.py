@@ -34,23 +34,23 @@ burglary = BayesNet([
 
 # Compute P(Alarm | burglary but no earthquake)
 print("P(Alarm | burglary but no earthquake")
-print(elimination_ask('Alarm', dict(Burglary=T, Earthquake=F), burglary).show_approx())
+print(enumeration_ask('Alarm', dict(Burglary=T, Earthquake=F), burglary).show_approx())
 print("This makes sense, since this is an explicit value in the table.")
 
 # Compute P(JohnCalls | burglary but no earthquake)
 print("\nP(JohnCalls | burglary but no earthquake")
-print(elimination_ask('JohnCalls', dict(Burglary=T, Earthquake=F), burglary).show_approx())
+print(enumeration_ask('JohnCalls', dict(Burglary=T, Earthquake=F), burglary).show_approx())
 print("The high value is correct, since John usually calls if the alarm goes off, and more than likely if the alarm"
       "goes off it is a burglary.")
 
 # Compute P(Burglary | alarm)
 print("\nP(Burglary | alarm)")
-print(elimination_ask('Burglary', dict(Alarm=T), burglary).show_approx())
+print(enumeration_ask('Burglary', dict(Alarm=T), burglary).show_approx())
 print("This is correct, since there is a chance the alarm went off because of an earthquake or for no reason.")
 
 # Compute P(Burglary | John and Mary both call)
 print("\nP(Burglary } John and Mary both call")
-print(elimination_ask('Burglary', dict(JohnCalls=T, MaryCalls=T), burglary).show_approx())
+print(enumeration_ask('Burglary', dict(JohnCalls=T, MaryCalls=T), burglary).show_approx())
 print("John and Mary both calling is already pretty rare, and both have a chance of calling even without the alarm "
       "going off! \nSince there's also the chance that the alarm is going off for a reason other than a burglary, this "
       "isn't very high.")
