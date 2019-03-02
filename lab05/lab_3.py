@@ -19,12 +19,15 @@ happy = BayesNet([
     ])
 
 # Compute P(Raise | sunny)
+# Independent events: P(raise) = 0.01
 print("P(Raise | sunny)")
 print(enumeration_ask('Raise', dict(Sunny=T), happy).show_approx())
 print("This makes sense since these are independent events and have no effect on each other's probability."
       "\nThe probability comes directly from the table.\n")
 
+
 # Compute P(Raise | happy ^ sunny)
+# Computation in photo upload
 print("P(Raise | happy and sunny)")
 print(enumeration_ask('Raise', dict(Sunny=T, Happy=T), happy).show_approx())
 print("Again, sunny has no effect on the raise, but the effect happy could be because of a raise. Thus the presence"

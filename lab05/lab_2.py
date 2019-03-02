@@ -19,12 +19,14 @@ cancer = BayesNet([
     ])
 
 # Compute P(Cancer | both tests are positive)
+# Computation in photo upload
 print("P(Cancer | both tests are positive)")
 print(enumeration_ask('Cancer', dict(Test1=T, Test2=T), cancer).show_approx())
 print("This result makes sense, since there's a relatively high chance of getting a false positive, and the chance of "
       "cancer is quite low.\n")
 
 # Compute P(Cancer | Test1 is positive, Test2 is negative)
+# Computation in photo upload
 print("P(Cancer | Test1 is positive, Test2 is negative)")
 print(enumeration_ask('Cancer', dict(Test1=T, Test2=F), cancer).show_approx())
 print("This makes sense. Since the tests have such a high chance of being positive if cancer is present, a negative"
