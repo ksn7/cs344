@@ -1,0 +1,45 @@
+Kelsey Brouwer, Sean Brouwer, Chris Walstra
+lab06 part 1 for CS 344, SP '19
+
+Exercise 1:
+We want the machine learned model to sort books into genres.
+
+Exercise 2: 
+Our ideal outcome is to have all books given to the model sorted into the correct genre.
+
+Exercise 3:
+Our success metric is all books are sorted into their correct genre at least 95% of the time. 
+Our key results are 
+Our ML model is deemed a failure if it sorts a book into an incorrect genre consistently (more than 5% of the time) or does not assign a genre to a given book.
+
+Exercise 4:
+The output from our ML model will be a book's title and it's genre in a string, defined as title + genre.
+
+Exercise 5:
+The output from the ML model will be made available to the user immediately, with latency allowances up to 10 seconds. 
+The outcome will be used for recommending other books within a genre.
+
+Exercise 6: 
+If we didn't use ML, we would use heuristics such as 
+1. Specific authors always sort into corresponding genres, ex) JK Rowling writes fantasy
+2. Given a list of words that appear frequently within each genre, if a certain percentage of those words appear in the book OR if a certain percentage of the words in the book appear in the list, the book will be sorted into that genre.
+
+Exercise 7a:
+Our problem is best framed as mutli-class single-label classification which predicts a single specific genre for each book it is given.
+
+Exercise 7b:
+Our problem is a binary classification sorting into fiction and non-fiction.
+
+Exercise 8: 
+Input 1: author
+Input 2: title
+Input 3: summary
+Input 4: text
+Output: genre
+
+Exercise 9: 
+The author, title, and summary can be obtained Amazon.com
+The full text would need to obtained from Google books (paid resource)
+
+Exercise 10:
+The easiest to obtain outputs are author, title, and summary.

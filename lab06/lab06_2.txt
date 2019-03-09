@@ -1,0 +1,20 @@
+Kelsey Brouwer
+lab06 part 2 for CS 344, SP '19
+
+Information gain: Gain(A) = Entropy(V) - Remainder(A) 
+
+Entropy(V) = - sum(v_i * log_2(v_i)): This will be wait(6) vs not_wait(6)
+           = - (0.5*log_2(0.5) + 0.5*log_2(0.5))
+           = - (-.5 + -.5)
+           = 1
+
+Remainder(hungry) = sum( (p_i + n_i) / (p + n) * Entropy(p_i/(p_i + n_i), n_i/(p_i + n_i)))
+                  = prob(hungry)*Entropy(hungry) + prob(not hungry) * Entropy(not hungry)
+                  = 7/12*-1*(5/7*log_2(5/7) + 2/7*log_2(2/7)) + 5/12*-1*(1/5*log_2(1/5) + 4/5*log_2(4/5))
+                  = 7/12*-1*(-0.347 + -0.516) + 5/12*-1*(-0.464 + -0.258)
+                  = 0.503 + 0.301
+                  = 0.804
+
+Information Gain = 1 - 0.804 = 0.196
+
+This question is better than type of restaurant, since no information was gained by that calculation, but it is not as good of an indicator as the number of patrons in the restaurant, which gives us more information.
