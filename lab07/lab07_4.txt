@@ -1,0 +1,64 @@
+Kelsey Brouwer
+CS 344 SP '19
+
+Exercise 7.4
+  a. 
+Task 1:
+ - Median income has no context: scale 0 to 15?
+ - Rooms_per_person seems reasonable until the maximum value of 18.3, a 16 room jump from the 75th percentile. This could be outliers or data corruption.
+ - The provided solution suggests that there is an artificial cap showing up on median_house_value, but I am not seeing that show up in my dataset.
+
+Task 2:
+The validation data has a very limited range of longitude values compared to the training data. The distribution of values is not consistent between the two tables, especially whe looking at standard deviation values. 
+
+Task 3: 
+The bug is that the code for randomizing the data is commented out, so the data is likely pre-sorted in some way.
+
+Task 4: 
+  training_input_fn = lambda: my_input_fn(
+      training_examples, 
+      training_targets["median_house_value"], 
+      batch_size=batch_size)
+  predict_training_input_fn = lambda: my_input_fn(
+      training_examples, 
+      training_targets["median_house_value"], 
+      num_epochs=1, 
+      shuffle=False)
+  predict_validation_input_fn = lambda: my_input_fn(
+      validation_examples, validation_targets["median_house_value"], 
+      num_epochs=1, 
+      shuffle=False)
+
+linear_regressor = train_model(
+    learning_rate=0.00003,
+    steps=500,
+    batch_size=5,
+    training_examples=training_examples,
+    training_targets=training_targets,
+    validation_examples=validation_examples,
+    validation_targets=validation_targets)
+
+Task 5: 
+california_housing_test_data = pd.read_csv("https://download.mlcc.google.com/mledu-datasets/california_housing_test.csv", sep=",")
+
+test_examples = preprocess_features(california_housing_test_data)
+test_targets = preprocess_targets(california_housing_test_data)
+
+predict_test_input_fn = lambda: my_input_fn(
+      test_examples, 
+      test_targets["median_house_value"], 
+      num_epochs=1, 
+      shuffle=False)
+
+test_predictions = linear_regressor.predict(input_fn=predict_test_input_fn)
+test_predictions = np.array([item['predictions'][0] for item in test_predictions])
+
+root_mean_squared_error = math.sqrt(
+    metrics.mean_squared_error(test_predictions, test_targets))
+
+print("Final RMSE (on test data): %0.2f" % root_mean_squared_error)
+
+The final RMSE was much lower here, which shows that the randomized data and the multiple inputs for training the data make a significant difference in the performance of the model.
+
+  b. 
+A training dataset is the data fed to the model to train it. This is usually a large set of data to teach the model the right way to organize data points. A validation dataset is used to check that the training dataset did its job correctly and that the model handles data points correctly. This is likely a subset of the training dataset, since for each point in that set we know what the outcome should be and we can easily check that the statistics for this smaller sample line up with those of the larger training dataset. Finally, a testing dataset checks that the validation dataset being run through the model again hasn't changed the model too much that it is fit to that particular subset of data. This dataset might be new data or a different subset of the original data, and we see how well the model handles it to assure that the model is still working correctly.

@@ -1,0 +1,15 @@
+Kelsey Brouwer
+CS 344 SP '19
+
+Exercise 7.1
+  a.
+Exercise #1: 
+cities['wide and named after a saint'] = (cities['Area square miles'] > 50) & cities['City name'].apply(lambda name: name.startswith('San'))
+cities
+
+Exercise #2:
+cites.reindex([1, 18, 0, 12345])
+
+  b. Pandas provides an easy-to-understand user interface and the data manipulation is clear and intuitive.
+
+  c. Reordering could be helpful if you wanted to sort the dataset by a certain variable/column. Shuffling the dataframe could give new perspective by observing random datapoints.

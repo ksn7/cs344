@@ -1,0 +1,28 @@
+Kelsey Brouwer
+CS 344 SP '19
+
+Exercise 7.3
+  a. 
+Task 1: 
+california_housing_dataframe["rooms_per_person"] = california_housing_dataframe["total_rooms"] / california_housing_dataframe["population"]
+
+calibration_data = train_model(
+    learning_rate=0.00005,
+    steps=500,
+    batch_size=5,
+    input_feature="rooms_per_person"
+)
+
+Task 2: 
+plt.subplot(1,2,1)
+plt.scatter(calibration_data["predictions"], calibration_data["targets"])
+plt.subplot(1,2,2)
+_ = california_housing_dataframe["rooms_per_person"].hist()
+
+Task 3: 
+california_housing_dataframe["rooms_per_person"] = california_housing_dataframe["rooms_per_person"].apply(lambda x: min(x, 6))
+_ = california_housing_dataframe["rooms_per_person"].hist()
+
+  b. Sometimes, the raw data contained in a table does not have as much contextual significance as some other feature we could make up. We can create a new feature that is a ratio of two pieces of data that helps contextualize the data, giving us more meaning and a better understanding of the data.
+
+  c. Outliers are pieces of data that are significantly different from the majority of the data. They can cause statistical calculations to have unusual computational values that are not true of the majority of the data (they can skew population statistics), so they are usually removed from the dataset.

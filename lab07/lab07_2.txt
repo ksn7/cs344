@@ -1,0 +1,14 @@
+Kelsey Brouwer
+CS 344 SP '18
+
+Exercise 7.2
+  a. Categorical data is textual, or numbers that want to be treated as text. Numerical data is composed of numbers and can be manipulated mathematically in a way that makes sense. For example, often a postal code would be treated as categorical rather than numerical even though it is a set of numbers, since mathematical operations on a postal code don't really make sense.
+
+  b. 
+Task 1:
+RMSE of 171.40 achieved with learning_rate=0.00002, steps=400, batch_size=4, although I let it process for a while to get this low of a score
+
+Task 2: 
+RMSE of 176.26 achieved with learning_rate 0.00002, steps 1000, and batch_size 6 under input feature population. 
+
+  c. Learning_rate, steps, and batch_size are learned in these exercises. There is not a standard tuning algorithm for them since ideal values depend on the problem at hand. However, a small learning rate with larger batch and step sizes seemed to work well.
