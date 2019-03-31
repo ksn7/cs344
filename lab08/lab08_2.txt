@@ -1,0 +1,26 @@
+Kelsey Brouwer
+CS 344 SP '19
+
+Exercise 8.2
+  a. The same learning_rate is being entered each time, but FTRL has been applied to the optimizer, which figures in to the linear_regressor. So each time the model iterates through another loop, FTRL adjusts the learning_rate.
+
+  b. Bucketizing/binning is a good way to break up features with continuous values into something that can be represented better in binary, especially if the user cares more about similar groups within each feature rather than each data point's specific value. It can also be helpful if one wants to use a continuous feature in feature crosses, which only take discrete features. 
+
+  c.
+Task 1: including only code I wrote
+  bucketized_latitude = tf.feature_column.bucketized_column(
+    latitude, boundaries = get_quantile_based_boundaries(
+      training_examples["latitude"], 10))
+  bucketized_housing_median_age = tf.feature_column.bucketized_column(
+    housing_median_age, boundaries = get_quantile_based_boundaries(
+      training_examples["housing_median_age"], 5))
+  bucketized_median_income = tf.feature_column.bucketized_column(
+    median_income, boundaries = get_quantile_based_boundaries(
+      training_examples["median_income"], 5))
+  bucketized_rooms_per_person = tf.feature_column.bucketized_column(
+    rooms_per_person, boundaries = get_quantile_based_boundaries(
+      training_examples["rooms_per_person"], 10))
+
+Task 2: code I wrote
+  long_x_lat = tf.feature_column.crossed_column(
+    set([bucketized_longitude, bucketized_latitude]), 1000)

@@ -1,0 +1,9 @@
+Kelsey Brouwer
+CS 344 SP '19
+
+Exercise 8.1
+  a. The Pearson correlation coefficient measures how strongly two variables correlate with each other. Another way of putting this is measuring how directly the variables have a proportional relationship. An example is that any variable compared with itself has a correlation of 1 because their data is the same, so they represent a perfect correlation. On the other hand, latitude and total_rooms have nothing to do with each other, so they have a correlation of 0.
+  b. 
+Features selected for task 1: median_income, households, population. After checking the provided solution, I discovered that doing simply median_income and latitude provided a better result (my features produced a final RMSE of 169.33, while the suggested solution got down to 113.23)
+
+Synthetic features developed for task 2: I wanted to make a synthetic feature that measured the distance to a major city, thus computing the minimum of the distances to Los Angeles and San Francisco. However, upon attempting to make this feature, I received "Value Error: The truth value of a Series is ambiguous." Unable to figure out the problem, I went with the provided solution and tried the bucket approach. Given this course of action, I could only beat the Google-provided baselines by adjusting the parameters of the training model.

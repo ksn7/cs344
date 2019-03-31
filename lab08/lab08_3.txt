@@ -1,0 +1,13 @@
+Kelsey Brouwer
+CS 344 SP '19
+
+Exercise 8.3
+  a. Seaborn is based off of matplotlib, which is Python's library for mathematical plotting of all kinds. Seaborn is specialized for data visualization and statistics, with a high level interface. 
+
+  b. The dataset has 397 data points, which seems pretty small. Seeing how in the end the model didn't do a great job of predicting the MPG, it is likely too small for most practical purposes.
+
+  c. This normalization replaces specific values in the dataset with their standard deviations from the mean for that feature. A new value of 0 would mean the original value was exactly the mean, while a value of +/- 1 would mean the original value was exactly one standard deviation above/below the mean.
+
+  d. This is a regression model, but it is not specifically linear. It simply tries to predict what the value would be, and the shape of the graph will depend on the input data.
+
+  e. As included in the written conclusion, the point of using a smaller network when a small dataset is available is to avoid overfitting. A larger or more complicated network needs more data to be run through it before it becomes accurate, since there are more input weights to adjust and the function becomes quite complex. A smaller network would be simpler, so not as many input values are needed to train the model. For these reasons I agree with the statement written here. However, it is likely that this small model may not do a good job predicting the target, because the input factors may be related in a complicated way that the smaller model could not truly represent with any accuracy.
