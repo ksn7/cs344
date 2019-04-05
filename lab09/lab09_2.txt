@@ -1,0 +1,9 @@
+Kelsey Brouwer
+CS 344 SP '19
+
+Exercise 9.2
+  a. When we regularize with respect to sparsity, we are attempting to get more of the input weights to be zero. We call this sparsity because then the data appears to be more spread out since it is gathered at 0. This is an improvement because we are essentially ignoring inputs when their weights are zero, which simplifies the model and makes it more efficient. 
+
+  b. L1 regularization increases sparcity by increasing the number of input weights that are exactly zero. According the Google crash course, it does this by changing the input weights at a constant rate as the model learns, so some weights will continue decreasing until they hit zero. This is different from L2 regularization, which adjusts weights by a percentage of the weight, which makes it very difficult to reach zero. In this way L1 does a good job of making more weights zero, which increases the sparcity of the data and simplifies the model.
+
+  c. Regularization strength of 0.1 achieved a LogLoss of 0.24

@@ -1,0 +1,12 @@
+Kelsey Brouwer
+CS 344 SP '19
+
+Exercise 9.3
+  a. Exercise 1
+    i. The cats/dogs dataset contains 2,000 JPG photos
+    ii. The first convnet example is similar to the one we did in class. It also takes images and slowly extracts features from them, then some of those features are activated and become more important while others fade away over time.
+    iii. I find the representation of colors interesting in the intermediate levels. Often the images that are colored in are spaced out and between them are outlines of the image.
+
+  b. Exercise 2
+    i. Data augmentation is performing slight and random transformations on the given data to provide more inputs to the model, hopefully reducing overfitting.
+    ii. Since the model took so long to run, I only had time to run it with the original given hyperparameters: steps=100, epochs=30, validation_steps=50. Result of 0.7370 accuracy and loss of 0.5602

@@ -1,0 +1,11 @@
+Kelsey Brouwer
+CS 344 SP '19
+
+Exercise 9.1
+  a. Final RMSE of 0.44, which isn't great for a scale of 0 to 1, so linear regression does a rather poor job. Furthermore, the RMSE value barely changes between periods, so it doesn't show a lot of improvement.
+ 
+  b. Both L2 loss and LogLoss are representations of loss, but L2 loss doesn't do a very good job when the output is a probability because misclassifications can appear to be a small mistake because of the scale. On the other hand, LogLoss treats error logarithmically, which will give higher penalty to misclassifications.
+
+  c. The final LogLoss value is 0.53, which appears to be worse, but that reveals that our model isn't doing as well as linear regression would have us believe.
+
+  d. AUC: 0.79; accuracy 0.78 achieved with learning_rate=0.000005, steps=1000, batch_size=30
