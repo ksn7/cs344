@@ -1,0 +1,9 @@
+Kelsey Brouwer
+CS 344 SP '19
+
+Exercise 10.3
+  a. The confusion matrix shows how often each predicted label lined up with each true label. We see a dark straight line, which means that most of the time, the model predicted the correct label. Some of the darker squares indicate that frequent mislabellings were labelling an 8 on 5s or a 3 on 8s. 
+
+  b. The networks have different batch sizes, for one. Additionally, the model in class has an embedded layer first, followed by a 32 node RNN, followed by a dense layer with the sigmoid activation, optimized with rmsprop and binary crossentropy loss. The TensorFlow network uses LogLoss and the Adagrad optimizer. It also has two 100 neuron hidden layers, which is different from the structure of our RNN.
+
+  c. At 10 steps, the visualizations all look like pure noise with no real distinguishable shapes. At 1000 steps, the visualizations detect distinct features, like small lines or swirls that could potentially be identified as part of a specific digit.

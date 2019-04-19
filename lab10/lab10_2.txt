@@ -1,0 +1,10 @@
+Kelsey Brouwer
+CS 344 SP '19
+
+Exercise 10.2:
+  a. Adagrad lowers the effective learning rate by modifying the learning rate for each coefficient in a model. This works well for convex problems.
+
+  b. 
+Task 1: The normalized data produced a final RMSE of 71.86 on the training data and 72.10 on the validation data.
+Task 2: Adagrad produced final RMSEs of 68.44 and 68.69 on training and validation data, respectively.Adam produced final RMSEs of 69.55 and 69.74.
+Task 3: I log_normalized households, median income, and total bedrooms while leaving latitude, longitude, and housing median age in linear scales. I chose to clip extreme values from population, total rooms, and rooms per person. This left me with final RMSEs of 71.25 and 71.89.

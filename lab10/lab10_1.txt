@@ -1,0 +1,8 @@
+Kelsey Brouwer
+CS 344 SP '19
+
+Exercise 10.1
+  a. I would rather use Keras to use my models because I am more comfortable with it so I find it easier to use.
+
+  b. 
+Tasks 1 & 2: learning rate 0.001, steps 2000, batch_size 150, hidden_units [10, 10]. Final RMSE on training 106.55, validation 106.58, testing 105.40

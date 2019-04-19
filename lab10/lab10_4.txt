@@ -1,0 +1,13 @@
+Kelsey Brouwer
+CS 344 SP '19
+
+Exercise 10.4
+  a. The advantage of a linear model is it is much simpler than a DNN, so it is a good place to start for a simple approach. Also, if some problems end up being linear, a linear model will be a simple quick computation rather than going through the work of a DNN.
+
+  b. The DNN does not overall do better than the linear model. The linear model had several better outcomes on the training data, and the two models had mixed results on the testing data.
+
+  c. The embedding DNN improves better than the previous model, showing they must help for the sentiment analysis tasks.
+
+  d. 'fantastic' and 'great' have similar embeddings, which we know because they show up very close to each other on the graph. This makes sense because both of these words would be far more likely to show up in positive movie reviews than in negative ones. The words also have similar meanings and would be used in similar contexts, making them almost interchangeable, so the embedding does a good job of identifying them as similar.
+
+  e. I achieved my best results by adding all of the terms, using the Adagrad optimizer and 1200 steps on the model. These resulted in test set results of 0.830 accuracy, 0.839 recall and 0.824 precision.
