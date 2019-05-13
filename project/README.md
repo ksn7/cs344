@@ -5,4 +5,5 @@ This project works to explore and understand the use of the cut in Prolog progra
    - lpn10practical.pl: a file containing effort towards the exercises from LPN 10.5 Practical Session. Incomplete work, but can be run with SWI Prolog from the command line.
    - proposal.ipynb: project proposal in two parts, open in Jupyter notebooks.
    - report.ipynb: project report, open in Jupyter notebooks.
+   - showcase.ipynb: prepared materials for the project showcase, open in Jupyter notebooks.
    - updates.ipynb: document listing the project updates made since the walkthrough that occurred on Friday, May 10. Open with Jupyter notebooks.
